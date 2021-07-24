@@ -7,7 +7,7 @@ function playsound(sound) {
     let keyElement = document.querySelector(`div[data-key="${sound}"]`);
 
     if(audioElement) {
-        audioElement.currentTim = 0;
+        audioElement.currentTime = 0;
         audioElement.play();
     }
 
