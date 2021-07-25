@@ -10,6 +10,8 @@ function updateClock() {
     let minute = now.getMinutes();
     let second = now.getSeconds();
 
+    digitalElement.innerHTML = `${hour}:${minute}:${second}`
+
 }
 
 setInterval(updateClock, 1000);
