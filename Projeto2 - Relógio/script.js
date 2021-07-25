@@ -10,7 +10,15 @@ function updateClock() {
     let minute = now.getMinutes();
     let second = now.getSeconds();
 
-    digitalElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(second)}`
+    digitalElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(second)}`;
+
+    let sDeg = ((360/60) * second) - 90;
+    let mDeg = ((360/60) * minute) - 90;
+    let hDeg = ((360/12) * hour) - 90;
+
+    sElement.style.transform = `rotate(${sDeg}deg)`
+    sElement.style.transform = `rotate(${mDeg}deg)`
+    sElement.style.transform = `rotate(${hDeg}deg)`
 
 }
 
@@ -22,4 +30,5 @@ function fixZero(time){
     }
 }
 
+updateClock();
 setInterval(updateClock, 1000);
