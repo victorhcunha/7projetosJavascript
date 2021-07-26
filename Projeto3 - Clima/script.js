@@ -20,6 +20,7 @@ document.querySelector(".busca").addEventListener("submit", async(event) =>{
             })
 
         }else{
+            clearInfo()
             showWarning("Cidade não encontrada")
         }
 
@@ -38,10 +39,11 @@ function showInfo(json){
 
     document.querySelector(".temp img").setAttribute("src", `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
     document.querySelector(".ventoPonto").style.transform = `rotate(${json.windAngle - 90}deg)`;
-    
 
+}
 
-
+function clearInfo(){
+    document.querySelector(".resultado").style.display = "none";
 
 }
 
