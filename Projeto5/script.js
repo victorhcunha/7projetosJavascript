@@ -2,6 +2,9 @@
 let currentColor = "black";
 let canDraw = false;
 
+let mouseX = 0;
+let mousey = 0;
+
 let screen = document.querySelector("#tela");
 let ctx = screen.getContext("2d");
 
@@ -24,14 +27,30 @@ function colorClickEvent(e){
 }
 
 function mouseDownEvent(){
-    canDraw = true
+    canDraw = true;
+    mouseX = e.pageX - screen.offsetLeft;
+    mouseY = e.pageY - screen.offsetTop;
 }
 
-function mouseMoveEvent(){
-    console.log("movendo o mouse")
+function mouseMoveEvent(e){
+    if(canDraw){
+        canDraw(e.pageX, e.pageY)
+    }
 
 }
 
 function mouseUpEvent(){
     canDraw = false
+}
+
+function drawn(x,y){
+    let pointX = x - screen.offsetLeft;
+    let pointY = y - screen.offsetTop;
+
+    ctx.beginPath();
+    ctx.lineWidth = 5;
+    ctx.lineJoin = "round";
+
+    mouseX = pointX;
+    mouseY = pointY;
 }
