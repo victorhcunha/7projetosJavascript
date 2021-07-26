@@ -31,12 +31,13 @@ function showInfo(json){
 
     document.querySelector(".resultado").style.display = "block";
 
-    document.querySelector(".aviso").innerHTML = `${json.name}, ${json.country}`;
+    document.querySelector(".titulo").innerHTML = `${json.name}, ${json.country}`;
     document.querySelector(".tempInfo").innerHTML = `${json.temp} <sup>Cº</sup>`;
     document.querySelector(".ventoInfo").innerHTML = `${json.windSpeed}`;
     document.querySelector(".ventoInfo").innerHTML = `${json.windSpeed} <spam>KM/h</spam>`;
 
-
+    document.querySelector(".temp img").setAttribute("src", `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
+    
 
 
 
