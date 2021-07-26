@@ -1,12 +1,16 @@
 //inicial data
 let currentQuestion = 0;
+let correctAnswers = 0;
 
 showQuestion();
 
 //functions
 function showQuestion(){
     if(questions[currentQuestion]){
-        let q = questions[currentQuestion]
+        let q = questions[currentQuestion];
+
+        let pct = Math.floor((currentQuestion/questions.length)*100);  
+        document.querySelector(".progress--bar").style.width = `${pct}%`
 
         document.querySelector(".scoreArea").style.display = "none";
         document.querySelector(".questionArea").style.display = "block";
@@ -26,7 +30,7 @@ function showQuestion(){
 
 
     }else{
-
+        finishQuiz();
     }
 
 }
@@ -36,6 +40,18 @@ function optionsClickEvent(e){
     let clickedOption = parseInt(e.target.getAttribute("data-op"));
 
     if (questions[currentQuestion].answer == clickedOption){
-        console.log("Acertou")
+        console.log("Acertou");
+        correctAnswers ++;
     }
+
+    currentQuestion ++;
+    showQuestion()
+}
+
+function finishQuiz(){
+    document.querySelector(".scoreArea").style.display = "block";
+    document.querySelector(".questionArea").style.display = "none";
+    document.querySelector(".progress--bar").style.width = `100%`
+
+    
 }
