@@ -9,6 +9,7 @@ let warning = "";
 let playing = false;
 
 // Events
+reset()
 document.querySelector(".reset").addEventListener("click", reset);
 
 // Functions
@@ -40,5 +41,6 @@ function renderSquare(){
 }
 
 function renderInfo(){
-     
+    document.querySelector(".vez").innerHTML = player;
+    document.querySelector(".resultado").innerHTML = warning  
 }
