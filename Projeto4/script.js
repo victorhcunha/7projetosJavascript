@@ -37,6 +37,6 @@ function renderSquare(){
     }
 }
 
-function rendfderInfo(){
+function renderInfo(){
      
 }
