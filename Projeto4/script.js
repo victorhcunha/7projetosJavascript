@@ -9,5 +9,23 @@ let warning = "";
 let playing = false;
 
 // Events
+document.querySelector(".reset").addEventListener("click", reset);
 
 // Functions
+function reset(){
+    warning = "";
+
+    let random = Math.floor(Math.random() * 2);
+    if(random === 0 ){
+        player = "x"
+    }else{
+        player = "o"
+    }
+
+    for(i in square){
+        square[i] = "";
+    }
+
+    playing = true
+
+}
