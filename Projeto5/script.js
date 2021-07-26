@@ -50,6 +50,11 @@ function drawn(x,y){
     ctx.beginPath();
     ctx.lineWidth = 5;
     ctx.lineJoin = "round";
+    ctx.moveTo(mouseX,mousey);
+    ctx.lineTo(mouseX,mousey)
+    ctx.closePAth();
+    ctx.strokeStyle = currentColor
+    ctx.stroke();
 
     mouseX = pointX;
     mouseY = pointY;
