@@ -32,7 +32,7 @@ function reset(){
     if(random === 0 ){
         player = "x"
     }else{
-        player = "o"
+        player = "o" 
     }
 
     for(i in square){
@@ -62,5 +62,6 @@ function togglePlayer(){
         player = "o"
     }else{
         player = "x"
-    }
+    };
+    renderInfo();
 }
