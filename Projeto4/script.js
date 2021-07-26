@@ -18,7 +18,7 @@ document.querySelectorAll(".item").forEach(item => {
 // Functions
 function itemClick(event){
     let item = event.target.getAttribute("data-item")
-    if(square[item] === ""){
+    if(playing && square[item] === ""){
         square[item] = player;
         renderSquare();
         togglePlayer();
@@ -46,7 +46,6 @@ function reset(){
 
 function renderSquare(){
     for(let i in square){
-        console.log("ITEM: ", i);
         let item = document.querySelector(`div[data-item=${i}]`)
         item.innerHTML = square[i]
     };
