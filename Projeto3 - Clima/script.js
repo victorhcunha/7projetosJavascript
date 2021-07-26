@@ -10,14 +10,30 @@ document.querySelector(".busca").addEventListener("submit", async(event) =>{
         let json = await results.json();
 
         if(json.cod === 200){
+            showInfo({
+                name: json.name,
+                country: json.sys.country,
+                temp: json.main.temp,
+                tempIcon: json.weather[0].icon,
+                windSpeed: json.wind.speed,
+                windAngle: json.wind.deg,
+            })
 
         }else{
             showWarning("Cidade não encontrada")
         }
 
-        console.log(json)
     }
 })
+
+function showInfo(json){
+    showWarning("");
+    document.querySelector(".resultado").style.display = "block";
+
+
+
+
+}
 
 function showWarning(msg){
     document.querySelector(".aviso").innerHTML = msg
