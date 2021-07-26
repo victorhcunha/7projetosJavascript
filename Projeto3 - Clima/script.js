@@ -28,7 +28,15 @@ document.querySelector(".busca").addEventListener("submit", async(event) =>{
 
 function showInfo(json){
     showWarning("");
+
     document.querySelector(".resultado").style.display = "block";
+
+    document.querySelector(".aviso").innerHTML = `${json.name}, ${json.country}`;
+    document.querySelector(".tempInfo").innerHTML = `${json.temp} <sup>Cº</sup>`;
+    document.querySelector(".ventoInfo").innerHTML = `${json.windSpeed}`;
+    document.querySelector(".ventoInfo").innerHTML = `${json.windSpeed} <spam>KM/h</spam>`;
+
+
 
 
 
