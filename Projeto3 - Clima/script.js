@@ -9,6 +9,12 @@ document.querySelector(".busca").addEventListener("submit", async(event) =>{
         let results = await fetch(url);
         let json = await results.json();
 
+        if(json.cod === 200){
+
+        }else{
+            showWarning("Cidade não encontrada")
+        }
+
         console.log(json)
     }
 })
