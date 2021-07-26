@@ -15,7 +15,7 @@ document.querySelectorAll(".colorArea .color").forEach(item => {
 screen.addEventListener("mousedown", mouseDownEvent);
 screen.addEventListener("mousemove", mouseMoveEvent);
 screen.addEventListener("mouseup", mouseUpEvent);
-document.querySelector(".clear").addEventListener("click", clearScreen())
+document.querySelector(".clear").addEventListener("click", clearScreen)
 
 
 //functions
@@ -62,5 +62,6 @@ function drawn(x,y){
 }
 
 function clearScreen(){
-    
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
