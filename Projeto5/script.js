@@ -34,7 +34,7 @@ function mouseDownEvent(){
 
 function mouseMoveEvent(e){
     if(canDraw){
-        canDraw(e.pageX, e.pageY)
+        draw(e.pageX, e.pageY)
     }
 
 }
