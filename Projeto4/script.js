@@ -33,7 +33,9 @@ function reset(){
 
 function renderSquare(){
     for(let i in square){
-        console.log("ITEM: ", i)
+        console.log("ITEM: ", i);
+        let item = document.querySelector(`div[data-item=${i}]`)
+        item.innerHTML = square[i]
     }
 }
 
