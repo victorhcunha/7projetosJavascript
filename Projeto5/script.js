@@ -48,10 +48,10 @@ function drawn(x,y){
     let pointY = y - screen.offsetTop;
 
     ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 3;
     ctx.lineJoin = "round";
-    ctx.moveTo(mouseX,mousey);
-    ctx.lineTo(mouseX,mousey)
+    ctx.moveTo(mouseX,mouseY);
+    ctx.lineTo(pointX,pointY)
     ctx.closePath();
     ctx.strokeStyle = currentColor
     ctx.stroke();
