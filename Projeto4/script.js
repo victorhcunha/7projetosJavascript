@@ -26,6 +26,17 @@ function reset(){
         square[i] = "";
     }
 
-    playing = true
+    playing = true;
+    renderSquare();
+    renderInfo();
+}
 
+function renderSquare(){
+    for(let i in square){
+        console.log("ITEM: ", i)
+    }
+}
+
+function rendfderInfo(){
+     
 }
