@@ -1,8 +1,10 @@
 //inicial data
 let currentQuestion = 0;
 let correctAnswers = 0;
-
 showQuestion();
+
+//events
+document.querySelector(".scoreArea button").addEventListener("click", resetEvent);
 
 //functions
 function showQuestion(){
@@ -69,4 +71,10 @@ function finishQuiz(){
     document.querySelector(".scoreArea").style.display = "block";
     document.querySelector(".questionArea").style.display = "none";
     document.querySelector(".progress--bar").style.width = `100%`
+}
+
+function resetEvent(){
+    correctAnswers = 0;
+    currentQuestion = 0;
+    showQuestion();
 }
