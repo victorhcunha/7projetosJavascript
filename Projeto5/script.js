@@ -1,5 +1,6 @@
 //inicial data
 let currentColor = "black";
+let canDraw = false;
 
 let screen = document.querySelector("#tela");
 let ctx = screen.getContext("2d");
@@ -23,7 +24,7 @@ function colorClickEvent(e){
 }
 
 function mouseDownEvent(){
-    console.log("clicando o mouse")
+    canDraw = true
 }
 
 function mouseMoveEvent(){
@@ -32,6 +33,5 @@ function mouseMoveEvent(){
 }
 
 function mouseUpEvent(){
-    console.log("soltou o mouse")
-
+    canDraw = false
 }
