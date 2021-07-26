@@ -26,7 +26,7 @@ function colorClickEvent(e){
     e.target.classList.add("active");
 }
 
-function mouseDownEvent(){
+function mouseDownEvent(e){
     canDraw = true;
     mouseX = e.pageX - screen.offsetLeft;
     mouseY = e.pageY - screen.offsetTop;
@@ -34,7 +34,7 @@ function mouseDownEvent(){
 
 function mouseMoveEvent(e){
     if(canDraw){
-        draw(e.pageX, e.pageY)
+        drawn(e.pageX, e.pageY)
     }
 
 }
@@ -52,7 +52,7 @@ function drawn(x,y){
     ctx.lineJoin = "round";
     ctx.moveTo(mouseX,mousey);
     ctx.lineTo(mouseX,mousey)
-    ctx.closePAth();
+    ctx.closePath();
     ctx.strokeStyle = currentColor
     ctx.stroke();
 
