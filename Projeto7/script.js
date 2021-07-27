@@ -71,5 +71,11 @@ function updateAreas(){
         }else{
             areas[name] = null
         }
-    })
+    });
+    if(areas.a === "1" && areas.b === "2" && areas.c ==="3"){
+        document.querySelector(".areas").classList.add("correct")
+    }else{
+        document.querySelector(".areas").classList.remove("correct")
+
+    }
 }
